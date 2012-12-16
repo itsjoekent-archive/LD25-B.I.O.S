@@ -59,7 +59,7 @@ public class Main extends JFrame implements Runnable {
         
         setSize(640, 480);
         setTitle("B.I.O.S");
-        setUndecorated(true);
+        setUndecorated(false);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -208,13 +208,13 @@ public class Main extends JFrame implements Runnable {
         int width = getContentPane().getWidth();
         int height = getContentPane().getHeight();
         
-        int currentX = 0;
-        int currentY = 0;
+        int currentX = 16;
+        int currentY = 16;
         
         Random r = new Random();
         
-        for(int yIndex = 0; yIndex < height/32; yIndex++){
-            for(int xIndex = 0; xIndex < width/32; xIndex++){
+        for(int yIndex = 0; yIndex < (height + 16)/32; yIndex++){
+            for(int xIndex = 0; xIndex < (width + 16)/32; xIndex++){
                 buildings.add(new Building(1, currentX, currentY));
                 currentX += 32;
             }
