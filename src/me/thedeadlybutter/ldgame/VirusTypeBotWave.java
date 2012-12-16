@@ -17,7 +17,7 @@ public class VirusTypeBotWave extends Virus{
     public VirusTypeBotWave(){
         super("BotWave", 150);
         try{
-            this.setSprite(ImageIO.read(this.getClass().getResource("res/BotWaveIcon.png")));
+            this.setSprite(ImageIO.read(this.getClass().getResource("res/BotWaveicon.png")));
         } catch (IOException ex) {
             ex.printStackTrace();
         }          

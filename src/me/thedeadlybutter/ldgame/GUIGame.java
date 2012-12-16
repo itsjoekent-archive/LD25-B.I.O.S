@@ -37,15 +37,16 @@ public class GUIGame implements GUI{
 
     @Override
     public void update(Main game) {
-        if(!defeatedCity(game)){
-            game.switchGUI(new GUIWon());
-        }
+
         if(game.getVirusGun().getMoney() < 0){
             game.switchGUI(new GUILostGame());
         }
         if(game.getInput().isKeyDown(KeyEvent.VK_SPACE)){
             game.switchGUI(new GUIVirusGun());
         }
+        if(!defeatedCity(game)){
+            game.switchGUI(new GUIWon());
+        }        
     }
     
     private boolean defeatedCity(Main game){
