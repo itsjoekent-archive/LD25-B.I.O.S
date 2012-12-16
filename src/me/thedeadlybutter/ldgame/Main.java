@@ -20,8 +20,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -44,9 +42,12 @@ public class Main extends JFrame implements Runnable {
     private Input input;
     private Mouse mouse;
     
+    private SoundHandler sound;
+    
     public Main(){
         input = new Input(this);
         mouse = new Mouse(this);
+        sound = new SoundHandler();
         
         buildings = new ArrayList<Building>();
         roads = new ArrayList<Road>();
@@ -314,5 +315,12 @@ public class Main extends JFrame implements Runnable {
     public VirusGun getVirusGun() {
         return virusGun;
     }
+
+    public SoundHandler getSound() {
+        return sound;
+    }
+    
+    
+    
     
 }

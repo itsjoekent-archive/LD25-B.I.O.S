@@ -83,11 +83,14 @@ public class GUIMainMenu implements GUI{
             else{
                 game.switchGUI(new GUILoading());
             }
+            game.getSound().playClick();
         }
         else if(helpBox.contains(x, y)){
             game.switchGUI(new GUIHelp());
+            game.getSound().playClick();
         }
         else if(quitBox.contains(x, y)){
+            game.getSound().playClick();
             game.stop();
         }
     }

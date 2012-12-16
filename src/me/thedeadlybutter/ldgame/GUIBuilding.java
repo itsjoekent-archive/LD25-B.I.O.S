@@ -98,9 +98,15 @@ public class GUIBuilding implements GUI {
     public void handleClick(Main game, int x, int y) {
         if(resBox.contains(x, y) && (!b.isResearched() || !b.isDefeated())){
             boolean r = game.getVirusGun().research(b);
+            if(r){
+                game.getSound().playResearch();
+            }
         }
         else if(infectBox.contains(x, y) && (!b.isDefeated() || !b.isDefeated())){
             boolean i = game.getVirusGun().execute(game, b);
+            if(i){
+                game.getSound().playInfect();
+            }
         }
     }
 

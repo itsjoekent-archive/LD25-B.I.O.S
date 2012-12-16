@@ -30,19 +30,31 @@ public class GUIGame implements GUI{
     public void handleClick(Main game, int x, int y) {
         Building b = game.getBuildingAt(x, y);
         if(b != null){
+            game.getSound().playClick();
             game.switchGUI(new GUIBuilding(b));
         }
     }
 
     @Override
     public void update(Main game) {
+        if(defeatedCity(game)){
+            game.switchGUI(new GUIWon());
+        }
         if(game.getVirusGun().getMoney() < 0){
             game.switchGUI(new GUILostGame());
-            System.out.println("T");
         }
         if(game.getInput().isKeyDown(KeyEvent.VK_SPACE)){
             game.switchGUI(new GUIVirusGun());
         }
+    }
+    
+    private boolean defeatedCity(Main game){
+        for(Building b : game.getBuildings()){
+            if(b.isDefeated()){
+                return false;
+            }
+        }
+        return true;
     }
     
 }

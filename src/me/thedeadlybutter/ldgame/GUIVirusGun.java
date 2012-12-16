@@ -146,49 +146,57 @@ public class GUIVirusGun implements GUI{
     public void handleClick(Main game, int x, int y) {
         if(addButton1.contains(x, y)){
             game.getVirusGun().addVirus(game.getVirusGun().getAvailableTypes().get(0));
+            game.getSound().playCoin();
         }
         if(addButton2.contains(x, y)){
             game.getVirusGun().addVirus(game.getVirusGun().getAvailableTypes().get(1));
+            game.getSound().playCoin();
         }
         if(addButton3 != null){
             if(addButton3.contains(x, y)){
                 game.getVirusGun().addVirus(game.getVirusGun().getAvailableTypes().get(2));
+                game.getSound().playCoin();
             }
         }        
         if(addButton4 != null){
             if(addButton4.contains(x, y)){
                 boolean added = game.getVirusGun().addVirus(game.getVirusGun().getAvailableTypes().get(3));
-                System.out.println(added);
+                game.getSound().playCoin();
             }
         } 
         if(addButton5 != null){
             if(addButton5.contains(x, y)){
                 game.getVirusGun().addVirus(game.getVirusGun().getAvailableTypes().get(4));
+                game.getSound().playCoin();
             }
         }         
         if(addButton6 != null){
             System.out.println("1");
             if(addButton6.contains(x, y)){
-                System.out.println("2");
                 game.getVirusGun().addVirus(game.getVirusGun().getAvailableTypes().get(5));
+                game.getSound().playCoin();
             }
         }         
         
         if(slot1 != null){
             if(slot1.contains(x, y))
             game.getVirusGun().removeVirus(0);
+            game.getSound().playCoin();
         }
         if(slot2 != null){
             if(slot2.contains(x, y))
             game.getVirusGun().removeVirus(1);
+            game.getSound().playCoin();
         }        
         if(slot3 != null){
             if(slot3.contains(x, y))
             game.getVirusGun().removeVirus(2);
+            game.getSound().playCoin();
         }        
         if(slot4 != null){
             if(slot4.contains(x, y))
             game.getVirusGun().removeVirus(3);
+            game.getSound().playCoin();
         }        
         
         
